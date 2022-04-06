@@ -6,7 +6,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var OraganicfruitsRouter = require('./routes/Oraganicfruits');
+var OrganicfruitsRouter = require('./routes/Organicfruits');
 var addmodsRouter = require('./routes/addmods');
 var selectorRouter = require('./routes/selector');
 
@@ -25,7 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/Oraganicfruits', OraganicfruitsRouter);
+app.use('/Organicfruits', OrganicfruitsRouter);
 app.use('/addmods', addmodsRouter);
 app.use('/selector', selectorRouter);
 
