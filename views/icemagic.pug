@@ -1,0 +1,33 @@
+extends layout
+block content
+  h1= title
+  p Welcome to the icemagic 
+  div(class="container-fluid")
+        div(class="row")
+            -
+                let icemagic = [
+                    {
+                        "Itemname": "Royal Fudge",
+                        "Quantity": 22,
+                        "price": "Five USD"
+                    },
+                    {
+                        "Itemname": "Vanilla",
+                        "Quantity": 40,
+                        "price": "Twenty USD"
+                    },
+                    {
+                        "Itemname": "Black Current",
+                        "Quantity": 15,
+                        "price": "Twenty Two USD"
+                    },                   
+                ]
+            each v,index in icemagic
+                div(class="col-sm-2" onclick=`buy(${index})`) #{v.Itemname}
+                div(class="col-sm-2" onclick=`buy(${index})`) #{v.Quantity}
+                div(class="col-sm-2" onclick=`buy(${index})`) #{v.price}
+  script.                
+        function buy(intemNo)
+        {
+              alert(`you purchased Item ${intemNo+1}`)
+        }
